@@ -12,6 +12,8 @@ if [ ! -d "$VPP_CACHE_DIR" ]; then
     cd travisvpp
     git checkout ${VPP_COMMIT}
     yes | make install-dep
+    echo "!!!!!"
+    nasm -version
     make bootstrap
     make pkg-deb
 
