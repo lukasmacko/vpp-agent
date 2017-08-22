@@ -12,7 +12,7 @@ if [ ! -d "$VPP_CACHE_DIR" ]; then
     cd travisvpp
     git checkout ${VPP_COMMIT}
     yes | make install-dep
-    yes | apt-get remove nasm
+
     wget http://www.nasm.us/pub/nasm/releasebuilds/2.12.01/nasm-2.12.01.tar.bz2
     tar xfj nasm-2.12.01.tar.bz2
     cd nasm-2.12.01/
@@ -23,6 +23,7 @@ if [ ! -d "$VPP_CACHE_DIR" ]; then
     cd ..
     echo "!!!!!"
     nasm -version
+
     make bootstrap
     make pkg-deb
 
